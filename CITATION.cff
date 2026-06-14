@@ -1,0 +1,7 @@
+cff-version: 1.2.0
+title: "SACGT Magnetism Preview: Motif-aware crystal learning for interpretable magnetic reasoning"
+message: "Please cite the final SACGT paper once it is available. This repository is a pre-publication preview."
+type: software
+authors:
+  - name: SACGT authors
+year: 2026
