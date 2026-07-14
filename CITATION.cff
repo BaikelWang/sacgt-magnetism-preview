@@ -1,7 +1,19 @@
 cff-version: 1.2.0
-title: "SACGT Magnetism Preview: Motif-aware crystal learning for interpretable magnetic reasoning"
-message: "Please cite the final SACGT paper once it is available. This repository is a pre-publication preview."
+title: "SACGT Magnetism Preview: Structure-aware crystal learning for interpretable magnetic reasoning"
+message: "This repository is a pre-publication preview. Please cite the final SACGT article once bibliographic details are available."
 type: software
 authors:
-  - name: SACGT authors
+  - family-names: Ji
+    given-names: Shilei
+  - family-names: Wang
+    given-names: Yixuan
+  - family-names: He
+    given-names: Xiaoyang
+  - family-names: Wang
+    given-names: Jinlan
+  - family-names: Zhang
+    given-names: Shengjie
+  - family-names: Gao
+    given-names: Li
 year: 2026
+repository-code: "https://github.com/BaikelWang/sacgt-magnetism-preview"

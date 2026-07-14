@@ -1,31 +1,35 @@
 # Pre-publication Access Policy
 
-This repository is intentionally limited. It is designed to show selected visual outputs and provide a stable public-facing project page without releasing the full unpublished workflow.
+This repository is a deliberately limited public companion to the SACGT manuscript. It provides a stable project page and selected visual material without publishing the implementation or records needed to reconstruct the complete study.
 
-## Allowed before publication
+## Public preview
 
-- viewing figures and figure previews;
-- sharing the repository link for scholarly communication;
-- citing the repository as a preview page;
-- inspecting lightweight plotting utilities.
+The public repository contains:
 
-## Not allowed before publication
+- selected manuscript figures in PDF and PNG formats;
+- figure-only colour and preview-rendering utilities;
+- a figure inventory and staged release documentation;
+- citation metadata for the preview.
 
-- redistributing the figures as standalone datasets;
-- using the figures to reconstruct candidate lists or screening decisions;
-- claiming independent discovery of candidates based on this preview;
-- training derivative models from unreleased data inferred from this repository;
-- reusing figures in publications, talks, preprints, or commercial material without permission.
+The public utilities do not contain model architecture, training, inference, attribution, or high-throughput screening logic.
 
-## Planned post-publication release
+## Materials withheld from the public preview
 
-After publication or formal clearance, the authors may release additional materials, such as:
+The following remain restricted before publication or formal release clearance:
 
-- model code;
-- model checkpoints;
-- processed example data;
-- reproducibility scripts;
-- expanded documentation;
-- DOI-linked archival assets.
+- manuscript-relevant model and workflow source code;
+- model checkpoints and internal experiment states;
+- frozen training, validation, test, and screening records;
+- complete candidate tables and unpublished derived results;
+- manuscript source, editorial correspondence, and reviewer material;
+- credentials, private infrastructure details, and third-party data that cannot be redistributed.
 
-Until then, this repository should be treated as a protected preview.
+## Confidential editorial and reviewer access
+
+Editors and referees may request the code, configurations, data partitions, and supporting records required to evaluate the central claims. Such material will be shared through the journal's confidential submission process or a controlled, time-limited repository link. It will not be posted in public issues or added to this preview during review.
+
+## Planned archival release
+
+After publication or formal clearance, the authors plan to prepare a frozen, versioned reproducibility package with manuscript-relevant code, metadata, and instructions. The intended archive has the reserved Zenodo DOI [`10.5281/zenodo.21340857`](https://doi.org/10.5281/zenodo.21340857). Until that deposit is released, the DOI and its files may remain unavailable to the public.
+
+The public release will be checked for credentials, private paths, third-party redistribution restrictions, and consistency with the final article before publication.
