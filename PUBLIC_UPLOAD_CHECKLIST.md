@@ -1,21 +1,15 @@
-# Public Upload Checklist
+# Public update checklist
 
-Before pushing this repository to GitHub, confirm:
+Before publishing an update:
 
-- [ ] The repository is named `sacgt-magnetism-preview` or another preview-specific name.
-- [ ] No manuscript source files are included.
-- [ ] No cover letters or submission correspondence are included.
-- [ ] No model weights/checkpoints are included.
-- [ ] No training, validation, or screening datasets are included.
-- [ ] No full candidate shortlist or raw prediction tables are included.
-- [ ] No API keys, passwords, SSH hosts, local paths, or server logs are included.
-- [ ] The license is intentionally restrictive before publication.
-- [ ] The README clearly states this is not the full reproducibility release.
+- [ ] Limit files to the approved public companion scope.
+- [ ] Keep acceptance distinct from online publication.
+- [ ] Check the title, authors, citation metadata, and figure versions.
+- [ ] Do not add an unverified article DOI or claim an inaccessible archive is public.
+- [ ] Exclude model source, weights, task datasets, raw predictions, and DFT outputs unless separately approved.
+- [ ] Exclude manuscript source, editorial correspondence, credentials, private paths, and server logs.
+- [ ] Do not promise future access or release dates without agreement.
+- [ ] Preserve the existing licence unless a change has been approved.
+- [ ] Check relative links, image rendering, and the final file list.
 
-Suggested GitHub description:
-
-> Pre-publication figure preview for SACGT, a motif-aware crystal graph transformer for interpretable magnetic reasoning in quantum materials.
-
-Suggested topics:
-
-`materials-science`, `crystal-graph`, `magnetic-materials`, `interpretable-ai`, `figures`, `prepublication`
+Repository description and topics are recorded in [GITHUB_DESCRIPTION.md](GITHUB_DESCRIPTION.md).

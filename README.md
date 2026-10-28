@@ -1,70 +1,117 @@
-# SACGT Magnetism Preview
+<h1 align="center">SACGT</h1>
 
-**Structure-aware crystal learning for interpretable magnetic reasoning in correlated solids**
-
-> [!IMPORTANT]
-> This is a limited **pre-publication preview** associated with the SACGT manuscript. It is not the final software or data release. Training code, model weights, task datasets, complete screening tables, and unpublished reproducibility materials are intentionally excluded.
+<p align="center"><strong>Structure-Aware Crystal Graph Transformer</strong></p>
 
 <p align="center">
-  <img src="assets/figures/main/figure1.png" width="92%" alt="Overview of the SACGT framework">
+  Motif-aware crystal transformers for magnetic-property prediction<br>
+  and interpretation in correlated solids
 </p>
 
-## Research overview
+<p align="center">
+  <strong>Accepted in <em>npj Computational Materials</em></strong><br>
+  Materials informatics · Crystal graph learning · Model interpretation
+</p>
 
-Magnetic and correlated solids present a demanding setting for crystal-property learning because their responses depend on local coordination, medium-range interaction pathways, and lattice-scale periodicity. The Structure-Aware Crystal Graph Transformer (SACGT) is a structure-first framework designed to represent these complementary scales from elemental identities and atomic geometry under periodic boundary conditions.
+<p align="center">
+  <a href="#overview">Overview</a> ·
+  <a href="#method">Method</a> ·
+  <a href="#public-materials">Materials</a> ·
+  <a href="#paper-and-citation">Citation</a>
+</p>
 
-The accompanying study evaluates SACGT across thermodynamic, magnetic, and electronic targets. It also examines a constrained attribution strategy for identifying trend-level site contributions to crystal magnetization and applies the resulting workflow to the prioritization of two-dimensional magnetic semiconductors. The public material here is limited to selected visual outputs and figure-rendering utilities; it is not sufficient to reproduce the reported training or screening workflow.
+## Overview
 
-## Public contents
+**How can a crystal-learning model account for both periodic structure and local motifs when predicting magnetic properties?**
 
-```text
-assets/figures/main/             Selected main-text figures in PDF and PNG formats
-assets/figures/supplementary/    Selected supplementary figures in PDF and PNG formats
-scripts/                         Figure-only colour and preview-rendering utilities
-docs/                            Figure inventory, access policy, and release plan
-examples/                        Placeholder for a future cleared public demonstration
-```
+SACGT combines a periodic crystal-convolution pathway with a motif-based attention pathway. The framework learns crystal-level properties from elemental identities and atomic geometry, then uses a separate attribution analysis to examine how structural features contribute to a prediction.
 
-The scripts in this repository operate only on already-generated figure files. They do not implement SACGT, train or evaluate a model, calculate attributions, or perform high-throughput screening.
+This repository is the public research companion to the accepted paper. It contains selected figures and visualization utilities, not the full model implementation or a reproducibility package.
 
-## Figure index
+<p align="center">
+  <a href="assets/figures/main/figure1.pdf">
+    <img src="assets/figures/main/figure1.png" width="100%" alt="SACGT architecture: periodic crystal convolution and graph-restricted cross-attention over motif representations, followed by feature-wise gated fusion and crystal-property prediction.">
+  </a>
+</p>
 
-| Item | File | Scope |
-|---|---|---|
-| Figure 1 | [`figure1.pdf`](assets/figures/main/figure1.pdf) | Framework overview and multiscale crystal representation |
-| Figure 2 | [`figure2.pdf`](assets/figures/main/figure2.pdf) | Predictive evaluation, scaling behaviour, and ablations |
-| Figure 3 | [`figure3.pdf`](assets/figures/main/figure3.pdf) | Magnetic attribution analysis in correlated Ti$_2$O$_3$ |
-| Figure 4 | [`figure4.pdf`](assets/figures/main/figure4.pdf) | Two-dimensional materials screening and first-principles follow-up |
-| Supplementary Figure 1 | [`supp_credibility_expanded_matrix.pdf`](assets/figures/supplementary/supp_credibility_expanded_matrix.pdf) | Expanded attribution diagnostics |
-| Supplementary Figure 2 | [`supp_2d_saig_panel10.pdf`](assets/figures/supplementary/supp_2d_saig_panel10.pdf) | Attribution overview for representative screened candidates |
+<p align="center"><sub>Architecture overview from the revised manuscript. Click the figure for the vector PDF.</sub></p>
 
-## Availability during peer review
+The authors assembled the diagram using Visio and PowerPoint. The crystal illustration was obtained from the Materials Project entry [mp-865951](https://next-gen.materialsproject.org/materials/mp-865951).
 
-This public preview is separate from the confidential reviewer package. Code, configurations, frozen data partitions, and supporting records needed to assess the central claims can be supplied to editors and referees through the journal's confidential submission channel upon request. Restricted materials will not be distributed through public GitHub issues.
+## Method
 
-After publication or formal release clearance, the authors plan to archive a versioned reproducibility package containing the manuscript-relevant training, inference, attribution, and screening code together with the required metadata and instructions. A Zenodo DOI has been reserved for that release: [`10.5281/zenodo.21340857`](https://doi.org/10.5281/zenodo.21340857). The DOI may remain inactive while the deposit is a restricted draft.
+1. **Periodic crystal encoding.** A crystal-convolution pathway represents atomic environments and periodic connectivity, producing a crystal-level readout.
+2. **Motif-based cross-attention.** Whole-graph node states query representations of site-centered, two-hop subgraphs. In the sparse configuration, attention follows retained periodic graph edges.
+3. **Feature-wise fusion.** A learned gate combines the two pooled representations for property prediction. Attribution is performed separately on the trained predictor; it is not an atom-resolved training target.
 
-## Deliberately excluded
+### What the study examines
 
-- SACGT architecture, training, inference, attribution, and screening source code;
-- model checkpoints, weights, optimizer states, and private experiment logs;
-- training, validation, test, and complete screening datasets;
-- full Materials Project or C2DB records and unpublished candidate tables;
-- manuscript source files, submission correspondence, and reviewer materials;
-- API keys, credentials, local paths, and server-specific configuration.
+- **Predictive performance:** comparisons across crystal-property tasks, with additional magnetic and formation-energy evaluations.
+- **Model interpretation:** site-resolved contributions in Ti₂O₃, alongside numerical and perturbation checks that examine their meaning and limitations.
+- **Materials screening:** prioritization of two-dimensional magnetic-semiconductor candidates from C2DB and a case study of 1T-CrS₂H.
 
-## Authors
+The comparisons show task- and metric-dependent performance, not uniform superiority over alternative models. The attribution values describe model contributions and should not be read as independently predicted or validated atomic magnetic moments.
+
+## Public materials
+
+| Material | Contents |
+|---|---|
+| [Architecture figure](assets/figures/main/figure1.pdf) | Revised framework diagram in vector PDF and PNG formats |
+| [Figure collection and provenance](docs/FIGURE_INVENTORY.md) | Selected visual results, with version and interpretation notes |
+| [Visualization utilities](scripts/README.md) | Colour helpers and PDF-to-PNG rendering |
+| [Access and release status](docs/PREPUBLICATION_ACCESS.md) | What is available here and the scope of any future release |
+
+The other figure assets are retained historical previews. They are not a complete set of the accepted paper's figures or supplementary results; see the inventory before reusing their numbering or quantitative annotations.
+
+<details>
+<summary><strong>Render the included figure PDFs</strong></summary>
+
+From the repository root:
+
+~~~bash
+python -m pip install -r requirements.txt
+python scripts/render_pdf_previews.py assets/figures/main
+python scripts/render_pdf_previews.py assets/figures/supplementary
+~~~
+
+This regenerates PNG previews beside the PDFs. It does not run SACGT, reproduce experiments, or calculate attributions.
+
+</details>
+
+## Paper and citation
+
+**Motif-aware crystal transformers for magnetic-property prediction and interpretation in correlated solids**
 
 Shilei Ji, Yixuan Wang, Xiaoyang He, Jinlan Wang, Shengjie Zhang, and Li Gao.
 
-Please direct requests for confidential peer-review material through the manuscript submission system so that reviewer anonymity and editorial confidentiality are preserved.
+Accepted in *npj Computational Materials*. The article is not yet online; its DOI and final bibliographic details will be added when available.
 
-## Citation
+~~~bibtex
+@article{ji2026sacgt,
+  title   = {Motif-aware crystal transformers for magnetic-property prediction and interpretation in correlated solids},
+  author  = {Ji, Shilei and Wang, Yixuan and He, Xiaoyang and Wang, Jinlan and Zhang, Shengjie and Gao, Li},
+  journal = {npj Computational Materials},
+  year    = {2026},
+  note    = {Accepted for publication}
+}
+~~~
 
-This repository is a project preview, not the archival software release. Please cite the final article once bibliographic details are available. Citation metadata for the preview are provided in [`CITATION.cff`](CITATION.cff).
+Machine-readable metadata are provided in [CITATION.cff](CITATION.cff). No article DOI or public archival deposit is claimed at this stage.
 
-## License
+<details>
+<summary><strong>Author contributions</strong></summary>
 
-The current contents are distributed under the restrictive pre-publication terms in [`LICENSE`](LICENSE). No open-source licence is implied for the withheld implementation. The licence and citation metadata may be updated when the final reproducibility release is cleared.
+- **Study design:** Shilei Ji, Xiaoyang He, and Yixuan Wang.
+- **Data curation, model development and implementation, analyses, results, and manuscript drafting and revision:** Yixuan Wang.
+- **First-principles calculations:** Shilei Ji and Xiaoyang He.
+- **Technical and funding support:** Shengjie Zhang, Jinlan Wang, and Li Gao.
+- All authors reviewed and approved the manuscript.
 
-See [`docs/PREPUBLICATION_ACCESS.md`](docs/PREPUBLICATION_ACCESS.md) for the access boundary and [`docs/RELEASE_PLAN.md`](docs/RELEASE_PLAN.md) for the planned release stages.
+</details>
+
+## Availability and contact
+
+The full implementation, model weights, task datasets, raw predictions, and study-specific DFT outputs are not distributed in this repository. Acceptance does not by itself change these access conditions. Any further release requires author approval and appropriate redistribution rights; no release date is announced.
+
+For questions about the public material, please [open an issue](https://github.com/BaikelWang/sacgt-magnetism-preview/issues). Research or access enquiries should be directed to the corresponding authors through their institutional contact channels; please do not post confidential material in public issues.
+
+The existing [LICENSE](LICENSE) remains in force. This preview should not be treated as an open-source release of SACGT. See the [access policy](docs/PREPUBLICATION_ACCESS.md) and [release status](docs/RELEASE_PLAN.md) for details.

@@ -1,8 +1,15 @@
-# Scripts
+# Visualization utilities
 
-These scripts are safe, figure-only utilities. They do not include model architecture, training, inference, attribution calculation, or high-throughput screening logic.
+These figure-only utilities do not implement model architecture, training, inference, attribution calculation, or screening.
 
-- `colors.py`: pastel colormap helpers used by manuscript-style plots.
-- `render_pdf_previews.py`: converts figure PDFs into PNG previews for GitHub rendering.
+- `colors.py`: pastel colour helpers for manuscript-style plots.
+- `render_pdf_previews.py`: converts the first page of each figure PDF in a folder into a PNG preview.
 
-Full reproducibility scripts are intentionally withheld until publication.
+From the repository root:
+
+```bash
+python -m pip install -r requirements.txt
+python scripts/render_pdf_previews.py assets/figures/main
+```
+
+The command writes PNGs beside the source PDFs. The full research implementation is not included; publication status does not change its access conditions.

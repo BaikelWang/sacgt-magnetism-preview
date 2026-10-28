@@ -1,35 +1,23 @@
-# Pre-publication Access Policy
+# Access policy
 
-This repository is a deliberately limited public companion to the SACGT manuscript. It provides a stable project page and selected visual material without publishing the implementation or records needed to reconstruct the complete study.
+SACGT has been accepted in *npj Computational Materials*. The article is not yet online. This repository remains a limited public research companion; acceptance does not automatically release the full implementation or underlying data.
 
-## Public preview
+## Available here
 
-The public repository contains:
+- Selected figure PDFs and PNG previews, with version notes in the [figure inventory](FIGURE_INVENTORY.md).
+- Figure-only colour and preview-rendering utilities.
+- Paper and repository citation metadata.
 
-- selected manuscript figures in PDF and PNG formats;
-- figure-only colour and preview-rendering utilities;
-- a figure inventory and staged release documentation;
-- citation metadata for the preview.
+These utilities do not implement the model, training, inference, attribution, or screening workflows.
 
-The public utilities do not contain model architecture, training, inference, attribution, or high-throughput screening logic.
+## Restricted material
 
-## Materials withheld from the public preview
+The full implementation, checkpoints, frozen data partitions, raw predictions, complete screening tables, study-specific DFT outputs, manuscript source, and editorial correspondence are not distributed here. Third-party data remain subject to their providers' terms.
 
-The following remain restricted before publication or formal release clearance:
+Access requests require author consideration and any necessary institutional or third-party approval. No confidential repository, public deposit, or automatic access arrangement is represented as available by this page. Please do not post restricted material in public issues.
 
-- manuscript-relevant model and workflow source code;
-- model checkpoints and internal experiment states;
-- frozen training, validation, test, and screening records;
-- complete candidate tables and unpublished derived results;
-- manuscript source, editorial correspondence, and reviewer material;
-- credentials, private infrastructure details, and third-party data that cannot be redistributed.
+## Future updates
 
-## Confidential editorial and reviewer access
+The article link and DOI will be added when available. A reserved archival DOI is not a published article DOI or evidence of an accessible data deposit. Any wider release will be announced only after its scope, permissions, and files have been approved.
 
-Editors and referees may request the code, configurations, data partitions, and supporting records required to evaluate the central claims. Such material will be shared through the journal's confidential submission process or a controlled, time-limited repository link. It will not be posted in public issues or added to this preview during review.
-
-## Planned archival release
-
-After publication or formal clearance, the authors plan to prepare a frozen, versioned reproducibility package with manuscript-relevant code, metadata, and instructions. The intended archive has the reserved Zenodo DOI [`10.5281/zenodo.21340857`](https://doi.org/10.5281/zenodo.21340857). Until that deposit is released, the DOI and its files may remain unavailable to the public.
-
-The public release will be checked for credentials, private paths, third-party redistribution restrictions, and consistency with the final article before publication.
+The existing [LICENSE](../LICENSE) remains unchanged. See [release status](RELEASE_PLAN.md). This document retains its historical filename to preserve incoming links.

@@ -1,28 +1,23 @@
-# GitHub Repository Setup
+# Repository metadata
 
-## Recommended repository name
+## Repository name
 
-`sacgt-magnetism-preview`
+Keep `sacgt-magnetism-preview` to preserve existing links.
 
-## Short description
+## About description
 
-Pre-publication figure preview for SACGT, a motif-aware crystal graph transformer for interpretable magnetic reasoning in quantum materials.
+Public research companion to SACGT, accepted in npj Computational Materials: motif-aware crystal learning for magnetic-property prediction and model interpretation.
 
-## Beautiful introduction for GitHub About / project page
+## Topics
 
-SACGT explores how crystal-scale periodicity and local coordination motifs jointly shape magnetism in correlated solids. This preview repository shares selected manuscript figures and lightweight visualization utilities while protecting unpublished code, data, and screening results until formal publication.
-
-## Suggested topics
-
+- materials-informatics
 - materials-science
 - crystal-graph
+- graph-transformer
 - magnetic-materials
-- interpretable-ai
-- quantum-materials
-- two-dimensional-materials
+- interpretable-machine-learning
 - scientific-machine-learning
-- prepublication
 
-## Suggested visibility before publication
+## Status
 
-Private is safest before acceptance. If a public page is needed, keep this preview-only version and do not upload full code, model weights, data, manuscript source, cover letters, or full candidate tables.
+Accepted, not yet online. Add a verified article link and DOI when available. Do not present a reserved archival DOI as the article DOI, imply that the full implementation is included, or change the licence without author approval.

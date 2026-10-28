@@ -1,6 +1,6 @@
 cff-version: 1.2.0
-title: "SACGT Magnetism Preview: Structure-aware crystal learning for interpretable magnetic reasoning"
-message: "This repository is a pre-publication preview. Please cite the final SACGT article once bibliographic details are available."
+title: "SACGT: Public Research Companion"
+message: "Please cite the associated paper, accepted in npj Computational Materials. The article is not yet online; its DOI and final bibliographic details are pending. This repository is not the full SACGT implementation."
 type: software
 authors:
   - family-names: Ji
@@ -15,5 +15,23 @@ authors:
     given-names: Shengjie
   - family-names: Gao
     given-names: Li
-year: 2026
 repository-code: "https://github.com/BaikelWang/sacgt-magnetism-preview"
+preferred-citation:
+  type: article
+  title: "Motif-aware crystal transformers for magnetic-property prediction and interpretation in correlated solids"
+  authors:
+    - family-names: Ji
+      given-names: Shilei
+    - family-names: Wang
+      given-names: Yixuan
+    - family-names: He
+      given-names: Xiaoyang
+    - family-names: Wang
+      given-names: Jinlan
+    - family-names: Zhang
+      given-names: Shengjie
+    - family-names: Gao
+      given-names: Li
+  journal: "npj Computational Materials"
+  year: 2026
+  notes: "Accepted for publication; article not yet online."
